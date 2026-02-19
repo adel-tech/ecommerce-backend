@@ -1,8 +1,5 @@
 const Product = require("../models/Product");
 
-// @desc   Create new product
-// @route  POST /api/products
-// @access Public (for now)
 exports.createProduct = async (req, res) => {
   try {
     const { name, description, price, image, category, stock } = req.body;
@@ -26,22 +23,6 @@ exports.createProduct = async (req, res) => {
     });
   }
 };
-
-// @desc   Get all products
-// @route  GET /api/products
-// @access Public
-// exports.getProducts = async (req, res) => {
-//   try {
-//     const products = await Product.find().sort({ createdAt: -1 });
-
-//     res.status(200).json(products);
-//   } catch (error) {
-//     res.status(500).json({
-//       message: "Failed to fetch products",
-//       error: error.message,
-//     });
-//   }
-// };
 
 exports.getProducts = async (req, res) => {
   try {
